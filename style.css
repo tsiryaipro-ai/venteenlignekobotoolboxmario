@@ -1,0 +1,73 @@
+/* ---- BASE & SCROLL ---- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #fcfcfc;
+}
+
+.shadow-lg-text {
+    text-shadow: 2px 4px 8px rgba(0,0,0,0.9);
+}
+
+/* ---- ANIMATIONS REVEAL ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- HOVER EFFETS ---- */
+.transition-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transition-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.15) !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+}
+
+/* ---- ACCORDEON FAQ ---- */
+.accordion-button:not(.collapsed) {
+    background-color: #fff3cd;
+    color: #000;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+/* ---- STRUCTURE SPECIFIQUE ---- */
+.process-card {
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    #process-container::before {
+        content: '';
+        position: absolute;
+        top: 66px;
+        left: 10%;
+        right: 10%;
+        height: 4px;
+        border-top: 3px dashed #dee2e6;
+        z-index: 0;
+    }
+}
